@@ -1,0 +1,27 @@
+{
+  "name": "iot-dashboard-app",
+  "version": "1.0.0",
+  "description": "Multicontainer docker app",
+  "main": "",
+  "scripts": {
+    "start": "npm run build:watch:UI:dev && npm run compose:docker:dev",
+    "build:watch:UI:dev": "cd UI && npm run ng build --watch",
+    "compose:docker:dev": "docker-compose -f app.docker-compose.dev.yml up -d --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaurabhLpRocks/iot-dashboard.git"
+  },
+  "keywords": [
+    "iot"
+  ],
+  "author": "Saurabh Palatkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SaurabhLpRocks/iot-dashboard/issues"
+  },
+  "homepage": "https://github.com/SaurabhLpRocks/iot-dashboard#readme",
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}

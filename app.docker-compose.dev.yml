@@ -1,0 +1,42 @@
+version: "3.4"
+
+services:
+  angular-nginx-docker:
+    container_name: ng-docker-dev
+    image: ng-docker-dev
+    build: 
+      context: UI
+      dockerfile: .docker/dev.dockerfile
+    environment:
+      NODE_ENV: development
+    volumes: 
+      # Uncomment following for Linux/Mac
+      - "/dist:/usr/share/nginx/html"
+      # Uncomment following for Windows
+      # - "./dist:/usr/share/nginx/html"
+    ports:
+      - 4200:80
+    ## set your startup file here
+    command: [nginx-debug, '-g', 'daemon off;']
+  api:
+    container_name: node-api
+    image: node-api
+    build:
+      context: API
+      dockerfile: .docker/dev.dockerfile
+    environment:
+      PORT: 5000
+      MONGO_URL: mongodb://database:27017
+      NODE_ENV: dev
+    ports:
+      - "5000:5000"
+    links:
+      - database
+    depends_on:
+      - database
+  
+  database:
+    container_name: database
+    image: mongo:4.0.3
+    ports:
+      - "27017:27017"

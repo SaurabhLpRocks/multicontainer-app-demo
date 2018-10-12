@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  angular-nginx-docker:
+    container_name: ng-docker-prod
+    image: ng-docker-prod
+    build: 
+      context: .
+      dockerfile: .docker/prod.dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 80:80
+      - 443:443
+      - 9229:9229
+    ## set your startup file here
+    command: [nginx, '-g', 'daemon off;'] 
