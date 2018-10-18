@@ -4,7 +4,7 @@
 # If you want to build the Angular project inside the docker, then uncomment following sectioin:
 FROM node:8.12.0-alpine as angular-built
 WORKDIR /usr/src/app
-RUN npm i -g @angular/cli
+RUN npm i -g @angular/cli@6.2.0
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 RUN npm install --silent
