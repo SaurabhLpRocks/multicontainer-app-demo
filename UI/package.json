@@ -6,6 +6,7 @@
     "start": "ng serve",
     "docker:start": "npm run build && docker-compose -f docker-compose.dev.yml up -d --build",
     "build": "ng build",
+    "build:watch": "ng build --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
