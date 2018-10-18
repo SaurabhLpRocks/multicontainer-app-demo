@@ -6,7 +6,11 @@
   "scripts": {
     "start": "npm run build:watch:UI:dev && npm run compose:docker:dev",
     "build:watch:UI:dev": "cd UI && npm run ng build --watch",
-    "compose:docker:dev": "docker-compose -f app.docker-compose.dev.yml up -d --build"
+    "compose:docker:dev": "docker-compose -f app.docker-compose.dev.yml up -d --build",
+    "setup:and:start": "npm run setup && npm run start",
+    "setup": "npm i && concurrently \"npm run install:API:dependencies\" \"npm run install:UI:dependencies\"",
+    "install:API:dependencies": "cd API && npm i",
+    "install:UI:dependencies": "cd UI && npm i"
   },
   "repository": {
     "type": "git",
