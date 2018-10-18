@@ -10,9 +10,6 @@ services:
     environment:
       NODE_ENV: development
     volumes: 
-      # Uncomment following for Linux/Mac
-      # - "/dist:/usr/share/nginx/html"
-      # Uncomment following for Windows
       - "./dist:/usr/share/nginx/html"
     ports:
       - 4200:80

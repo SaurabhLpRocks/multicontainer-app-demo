@@ -1,9 +1,7 @@
 FROM nginx:alpine
 LABEL author="Saurabh Palatkar"
 COPY nginx.conf /etc/nginx/nginx.conf
-
-COPY /dist /usr/share/nginx/html
-RUN ls /usr/share/nginx/html
+COPY dist/ ./usr/share/nginx/html
 
 # RUN ps aux | grep nginx
 # RUN chown -R root:root /usr/share/nginx/html/index.html

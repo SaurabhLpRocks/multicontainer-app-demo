@@ -10,7 +10,7 @@ services:
     environment:
       NODE_ENV: development
     volumes: 
-      - "./dist:/usr/share/nginx/html"
+      - "./UI/dist:/usr/share/nginx/html"
     ports:
       - 4200:80
     ## set your startup file here
