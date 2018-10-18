@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "docker:start": "npm run build && docker-compose -f docker-compose.dev.yml up -d --build",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

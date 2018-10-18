@@ -4,8 +4,9 @@
   "description": "Multicontainer docker app",
   "main": "",
   "scripts": {
-    "start": "npm run build:watch:UI:dev && npm run compose:docker:dev",
-    "build:watch:UI:dev": "cd UI && npm run ng build --watch",
+    "start":"npm run compose:docker:dev",
+    "build:and:start": "npm run build:UI:dev && npm run compose:docker:dev",
+    "build:UI:dev": "cd UI && npm run ng build",
     "compose:docker:dev": "docker-compose -f app.docker-compose.dev.yml up -d --build",
     "setup:and:start": "npm run setup && npm run start",
     "setup": "npm i && concurrently \"npm run install:API:dependencies\" \"npm run install:UI:dependencies\"",
