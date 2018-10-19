@@ -32,7 +32,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 COPY package-lock.json /usr/src/app/package-lock.json
 RUN npm install
-RUN npm install -g @angular/cli@6.2.0
+RUN npm install -g @angular/cli@7.0.1
 
 # add app
 COPY . /usr/src/app
