@@ -10,11 +10,11 @@ services:
     environment:
       NODE_ENV: development
     volumes: 
-      - "./UI:/usr/src/app"
+      - "./UI:/usr/share/app"
     ports:
-      - 4200:4200
+      - 4200:80
     ## set your startup file here
-    command: ["ng", "--host=0.0.0.0","serve"]
+    command: ["ng", "--host=0.0.0.0","--watch", "--poll=2000", "serve"]
   api:
     container_name: node-api
     image: node-api
