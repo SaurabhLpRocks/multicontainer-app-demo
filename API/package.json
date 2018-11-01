@@ -15,11 +15,11 @@
   "scripts": {
     "tsc": "tsc",
     "tsc-watch": "tsc -w",
-    "build": "gulp watch",
+    "build": "gulp build",
     "start": "npm run build && node build/src/index.js",
     "setup": "npm install",
     "test": "gulp test",
-    "start:watch": "npm run build && node build/src/index.js && nodemon --watch build/src build/src/index.js"
+    "watch": "nodemon --watch build/src build/src/index.js"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",
@@ -58,13 +58,11 @@
     "@types/sinon": "^4.1.3",
     "chai": "^4.1.2",
     "gulp": "3.9.1",
-    "gulp-batch": "^1.0.5",
     "gulp-env": "0.4.0",
     "gulp-mocha": "5.0.0",
     "gulp-rimraf": "0.2.2",
     "gulp-shell": "0.6.5",
     "gulp-tslint": "8.1.3",
-    "gulp-watch": "^5.0.1",
     "mocha": "^5.0.0",
     "node": "9.8.0",
     "sinon": "4.4.6",

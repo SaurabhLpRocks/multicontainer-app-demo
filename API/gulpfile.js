@@ -6,8 +6,6 @@ const tslint = require('gulp-tslint');
 const mocha = require('gulp-mocha');
 const shell = require('gulp-shell');
 const env = require('gulp-env');
-const watch = require('gulp-watch');
-const batch = require('gulp-batch');
 
 /**
  * Remove build directory.
@@ -66,12 +64,6 @@ gulp.task('configs', (cb) => {
  */
 gulp.task('build', ['tslint', 'compile', 'configs'], () => {
   console.log('Building the project ...');
-});
-
-gulp.task('watch', ['build'], function () {
-  watch('src/*.ts', batch(function (events, done) {
-      gulp.start('build', done);
-  }));
 });
 
 /**
